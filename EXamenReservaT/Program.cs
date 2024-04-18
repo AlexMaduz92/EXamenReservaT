@@ -17,7 +17,7 @@ namespace EXamenReservaT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PNClientes());
+            Application.Run(new PNTeatro());
         }
     }
 }
