@@ -10,8 +10,8 @@ namespace Datos.Core
     {
         Task<T> GetAsync(int id);
         Task<IEnumerable<T>> GetAllAsync();
-        Task AddAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteAsync(int id);
+        Task Agregar(T entity);
+        Task Actualizar(T entity);
+        Task Eliminar(int id);
     }
 }
