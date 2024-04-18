@@ -25,23 +25,30 @@ namespace Datos.Core
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task AddAsync(T entity)
+        public async Task Agregar(T entity)
         {
             _context.Set<T>().Add(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(T entity)
+        public async Task Actualizar(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task Eliminar(int id)
         {
-            var entity = await GetAsync(id);
-            _context.Set<T>().Remove(entity);
-            await _context.SaveChangesAsync();
+            var entity = await _context.Set<T>().FindAsync(id);
+            if (entity != null)
+            {
+                _context.Set<T>().Remove(entity);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new ArgumentException("La entidad no existe");
+            }
         }
     }
 }
