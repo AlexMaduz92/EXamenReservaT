@@ -53,12 +53,20 @@
   <ItemGroup>
     <Compile Include="BaseDatos\ExaIIRTeatroConec.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Core\IRepository.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repository.cs" />
+    <Compile Include="Core\UnitOfWork.cs" />
     <Compile Include="Entidades\DCliente.cs" />
     <Compile Include="Entidades\DReserva.cs" />
     <Compile Include="Entidades\DTeatro.cs" />
     <Compile Include="Migrations\202404180235227_AdicionTablas.cs" />
     <Compile Include="Migrations\202404180235227_AdicionTablas.designer.cs">
       <DependentUpon>202404180235227_AdicionTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404180307488_AdicionCore.cs" />
+    <Compile Include="Migrations\202404180307488_AdicionCore.designer.cs">
+      <DependentUpon>202404180307488_AdicionCore.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202404180235227_AdicionTablas.resx">
       <DependentUpon>202404180235227_AdicionTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404180307488_AdicionCore.resx">
+      <DependentUpon>202404180307488_AdicionCore.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
