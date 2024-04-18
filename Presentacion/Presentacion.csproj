@@ -69,6 +69,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExaIIRADDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ExaIIRADDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExaIIRADDataSet31.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +85,12 @@
     </Compile>
     <Compile Include="PNClientes.Designer.cs">
       <DependentUpon>PNClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PNTeatro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PNTeatro.Designer.cs">
+      <DependentUpon>PNTeatro.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -123,6 +134,17 @@
     <None Include="ExaIIRADDataSet3.xss">
       <DependentUpon>ExaIIRADDataSet3.xsd</DependentUpon>
     </None>
+    <None Include="ExaIIRADDataSet31.xsc">
+      <DependentUpon>ExaIIRADDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="ExaIIRADDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExaIIRADDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ExaIIRADDataSet31.xss">
+      <DependentUpon>ExaIIRADDataSet31.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -135,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PNClientes.resx">
       <DependentUpon>PNClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PNTeatro.resx">
+      <DependentUpon>PNTeatro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
