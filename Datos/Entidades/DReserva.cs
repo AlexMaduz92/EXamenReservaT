@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Datos.Entidades
 {
     public class DReserva
     {
         [Key]
-        public int ReservaId{ get; set; }
-        public DateTime FechaReserva { get; set; }
-        public int TeatroId { get; set; }
-        public int CienteId { get; set; }
-        public int AsientoN { get; set; }
+        public int ReservaId { get; set; }
 
-        public virtual DTeatro teatro { get; set; }
-        public virtual DCliente cliente { get; set; }
+        [ForeignKey("Cliente")]
+        public int? ClienteId { get; set; }
+        public virtual DCliente Cliente { get; set; }
+
+        [ForeignKey("Teatro")]
+        public int TeatroId { get; set; }
+        public virtual DTeatro Teatro { get; set; }
+
+        public DateTime FechaReserva { get; set; }
+        public int AsientoN { get; set; }
     }
 }

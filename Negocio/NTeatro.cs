@@ -1,4 +1,5 @@
 ﻿using Datos.Core;
+using Datos.BaseDatos;
 using Datos.Entidades;
 using System;
 using System.Collections.Generic;
@@ -10,15 +11,17 @@ namespace Negocio
     public class NTeatro
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IRepository<DTeatro> _teatroRepository;
 
         public NTeatro(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+
         }
 
         public async Task<IEnumerable<DTeatro>> ObtenerTodosTeatros()
         {
-            return await _unitOfWork.TeatroIU.GetAllAsync();
+            return await Task.Run(() => _teatroRepository.ObtenerTodos());
         }
 
         public async Task<DTeatro> ObtenerTeatroPorId(int id)

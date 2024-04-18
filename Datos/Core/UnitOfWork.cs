@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Datos.Core
+namespace Datos.BaseDatos
 {
     public class UnitOfWork : IUnitOfWork
     {

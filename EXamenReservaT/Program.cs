@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Datos.BaseDatos;
+using Datos.Core;
+using Datos.Entidades;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,15 +13,12 @@ namespace EXamenReservaT
 {
     internal static class Program
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
-        [STAThread]
+       [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PNTeatro());
+            Application.Run(new PMENUS());
         }
     }
 }

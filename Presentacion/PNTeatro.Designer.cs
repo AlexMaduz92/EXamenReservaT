@@ -211,6 +211,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CLIENTES);
             this.Name = "PNTeatro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PNTeatro";
             this.Load += new System.EventHandler(this.PTeatro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVTEATRO)).EndInit();

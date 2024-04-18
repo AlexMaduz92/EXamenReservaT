@@ -9,7 +9,7 @@ namespace Datos.Core
     public interface IRepository<T> where T : class
     {
         Task<T> GetAsync(int id);
-        Task<IEnumerable<T>> GetAllAsync();
+        IEnumerable<T> ObtenerTodos();
         Task Agregar(T entity);
         Task Actualizar(T entity);
         Task Eliminar(int id);

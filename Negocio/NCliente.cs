@@ -3,21 +3,24 @@ using Datos.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Datos.BaseDatos;
 
 namespace Negocio
 {
     public class NCliente
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IRepository<DCliente> _clienteRepository;
 
         public NCliente(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+            _clienteRepository = _unitOfWork.ClienteIU;
         }
 
         public async Task<IEnumerable<DCliente>> ObtenerTodosClientes()
         {
-            return await _unitOfWork.ClienteIU.GetAllAsync();
+            return await Task.Run(() => _clienteRepository.ObtenerTodos());
         }
 
         public async Task<DCliente> ObtenerClientePorId(int id)

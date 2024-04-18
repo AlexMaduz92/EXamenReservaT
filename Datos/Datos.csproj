@@ -57,8 +57,10 @@
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repository.cs" />
     <Compile Include="Core\UnitOfWork.cs" />
+    <Compile Include="Entidades\Class1.cs" />
     <Compile Include="Entidades\DCliente.cs" />
     <Compile Include="Entidades\DReserva.cs" />
+    <Compile Include="Entidades\DReservas.cs" />
     <Compile Include="Entidades\DTeatro.cs" />
     <Compile Include="Migrations\202404180235227_AdicionTablas.cs" />
     <Compile Include="Migrations\202404180235227_AdicionTablas.designer.cs">
@@ -71,6 +73,18 @@
     <Compile Include="Migrations\202404180743090_FalloDeEnergia.cs" />
     <Compile Include="Migrations\202404180743090_FalloDeEnergia.designer.cs">
       <DependentUpon>202404180743090_FalloDeEnergia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404181528304_DañoPorApagonCambioDeDatos.cs" />
+    <Compile Include="Migrations\202404181528304_DañoPorApagonCambioDeDatos.designer.cs">
+      <DependentUpon>202404181528304_DañoPorApagonCambioDeDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404181533398_DReserva.cs" />
+    <Compile Include="Migrations\202404181533398_DReserva.designer.cs">
+      <DependentUpon>202404181533398_DReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404181549515_2DADRESERVA.cs" />
+    <Compile Include="Migrations\202404181549515_2DADRESERVA.designer.cs">
+      <DependentUpon>202404181549515_2DADRESERVA.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +102,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404180743090_FalloDeEnergia.resx">
       <DependentUpon>202404180743090_FalloDeEnergia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404181528304_DañoPorApagonCambioDeDatos.resx">
+      <DependentUpon>202404181528304_DañoPorApagonCambioDeDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404181533398_DReserva.resx">
+      <DependentUpon>202404181533398_DReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404181549515_2DADRESERVA.resx">
+      <DependentUpon>202404181549515_2DADRESERVA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

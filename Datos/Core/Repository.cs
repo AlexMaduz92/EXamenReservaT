@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Principal;
 using System.Threading.Tasks;
+using Datos.Core;
+using Datos.Entidades;
 
-namespace Datos.Core
+namespace Datos.BaseDatos
 {
     public class Repository<T> : IRepository<T> where T : class
     {
@@ -13,18 +16,18 @@ namespace Datos.Core
         public Repository(DbContext context)
         {
             _context = context;
-        }
+
+    }
 
         public async Task<T> GetAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public IEnumerable<T> ObtenerTodos()
         {
-            return await _context.Set<T>().ToListAsync();
+            return _context.Set<T>().ToList();
         }
-
         public async Task Agregar(T entity)
         {
             _context.Set<T>().Add(entity);

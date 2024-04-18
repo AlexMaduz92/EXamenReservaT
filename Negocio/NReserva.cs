@@ -1,61 +1,51 @@
-﻿using Datos.Core;
-using Datos.Entidades;
+﻿using Datos.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocio
+namespace Datos.BaseDatos
 {
-    public class NReserva
+    public class ReservaDataAccess
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IRepository<DReserva> _reservaRepository;
+        private readonly string connectionString;
 
-        public NReserva(IUnitOfWork unitOfWork, IRepository<DReserva> reservaRepository)
+        public ReservaDataAccess(string connectionString)
         {
-            _unitOfWork = unitOfWork;
-            _reservaRepository = reservaRepository;
+            this.connectionString = connectionString;
         }
 
-        public async Task<DReserva> CrearReserva(DReserva reserva)
+        public List<DReserva> ObtenerReservas()
         {
-            // Implementar la lógica de negocio para crear una nueva reserva
-            await _unitOfWork.ReservaIU.Agregar(reserva);
-            await _unitOfWork.SaveAsync();
-            return reserva;
-        }
+            List<DReserva> reservas = new List<DReserva>();
 
-        public async Task<DReserva> ObtenerReserva(int id)
-        {
-            // Implementar la lógica de negocio para obtener una reserva por su ID
-            return await _unitOfWork.ReservaIU.GetAsync(id);
-        }
-
-        public async Task<IEnumerable<DReserva>> ObtenerReservas()
-        {
-            // Implementar la lógica de negocio para obtener todas las reservas
-            return await _unitOfWork.ReservaIU.GetAllAsync();
-        }
-
-        public async Task<DReserva> ActualizarReserva(DReserva reserva)
-        {
-            await _unitOfWork.ReservaIU.Actualizar(reserva);
-            await _unitOfWork.SaveAsync();
-            return reserva;
-        }
-
-        public async Task EliminarReserva(int id)
-        {
-            var reserva = await _reservaRepository.GetAsync(id);
-            if (reserva != null)
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                await _reservaRepository.Eliminar(id);
+                string query = "SELECT ReservaId, FechaReserva, TeatroId, ClienteId, AsientoN FROM DReserva";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DReserva reserva = new DReserva
+                            {
+                                ReservaId = Convert.ToInt32(reader["ReservaId"]),
+                                FechaReserva = Convert.ToDateTime(reader["FechaReserva"]),
+                                TeatroId = Convert.ToInt32(reader["TeatroId"]),
+                                ClienteId = Convert.ToInt32(reader["ClienteId"]),
+                                AsientoN = Convert.ToInt32(reader["AsientoN"])
+                            };
+                            reservas.Add(reserva);
+                        }
+                    }
+                }
             }
-            else
-            {
-                throw new ArgumentException("La reserva no existe");
-            }
+
+            return reservas;
         }
     }
 }
