@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202404180307488_AdicionCore.designer.cs">
       <DependentUpon>202404180307488_AdicionCore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404180743090_FalloDeEnergia.cs" />
+    <Compile Include="Migrations\202404180743090_FalloDeEnergia.designer.cs">
+      <DependentUpon>202404180743090_FalloDeEnergia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404180307488_AdicionCore.resx">
       <DependentUpon>202404180307488_AdicionCore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404180743090_FalloDeEnergia.resx">
+      <DependentUpon>202404180743090_FalloDeEnergia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
