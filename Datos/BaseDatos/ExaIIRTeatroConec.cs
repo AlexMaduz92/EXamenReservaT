@@ -20,5 +20,6 @@ namespace Datos.BaseDatos
         public DbSet<DCliente> cliente { get; set; }
         public DbSet<DReserva> reserva { get; set; }
 
+
     }
 }

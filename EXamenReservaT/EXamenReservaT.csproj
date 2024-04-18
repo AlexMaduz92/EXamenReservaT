@@ -88,6 +88,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{165d3a29-5420-495d-9dfc-64c7c9789887}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{5411a460-3253-4521-b30a-b358dee744a3}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Presentacion\Presentacion.csproj">
       <Project>{63eac327-bb3a-44f8-9c10-74e8eb2d7022}</Project>
       <Name>Presentacion</Name>
