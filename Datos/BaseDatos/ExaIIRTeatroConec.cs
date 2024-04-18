@@ -15,6 +15,7 @@ namespace Datos.BaseDatos
         {
 
         }
+        //BDCONECION PARA HACER PULL
         public DbSet<DTeatro> teatro { get; set; }
         public DbSet<DCliente> cliente { get; set; }
         public DbSet<DReserva> reserva { get; set; }
