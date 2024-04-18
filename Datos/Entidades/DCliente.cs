@@ -11,9 +11,9 @@ namespace Datos.Entidades
     {
         [Key]
         public int ClienteId { get; set; }
-        public string PrimerNombre{ get; set; }
-        public string SegundoNombre { get; set; }
-        public int Identidad { get; set; }  
+        public string Nombres{ get; set; }
+        public string Apellidos{ get; set; }
+        public decimal Identidad { get; set; }  
         public string Correo { get; set; }
         public int Celular { get; set; }    
         public virtual ICollection<DReserva> reserva { get; set; }
